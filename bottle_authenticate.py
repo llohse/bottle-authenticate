@@ -42,7 +42,7 @@ class BottleAuthenticatePlugin(object):
     ''' Make sure that other installed plugins don't affect the same
         keyword argument.'''
     for other in app.plugins:
-      if not isinstance(other, BottleLoginPlugin): continue
+      if not isinstance(other, BottleAuthenticatePlugin): continue
       if other.keyword == self.keyword:
         raise PluginError("Found another plugin with "\
         "conflicting settings (non-unique keyword).")
